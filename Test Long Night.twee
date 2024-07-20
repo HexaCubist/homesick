@@ -1,0 +1,182 @@
+:: StoryTitle
+Test Long Night
+
+
+:: StoryData
+{
+  "ifid": "8C4C85DF-97C0-4105-9A78-43747FF5FBAC",
+  "format": "Chapbook",
+  "format-version": "2.1.0",
+  "start": "Prologue",
+  "zoom": 0.6
+}
+
+
+:: Bedroom {"position":"1500,350","size":"100,100"}
+You arrive in your fridgid bedroom.
+
+It's familiar but after a long day of rain it's not entirely inviting.
+
+[[Turn on the the old gas heater|Lights]]
+
+[[Crawl into your bed, still covered in your drenched clothing|Frigid]]
+
+
+:: ColdBed {"position":"1500,600","size":"100,100"}
+You toss and turn throughout the night
+
+Why have you done this to yourself?
+
+Has the day really taken this much out of you?
+
+[[Pull all your energy together to turn on the lights and start the heater|Lights]]
+
+[[Ignore your body screaming for warmth and go to sleep|ColdMorning]]
+
+
+:: ColdMorning {"position":"1375,600","size":"100,100"}
+Remarkably you fall asleep.
+
+You wake up in a cold room but you can feel that things will be alright.
+
+{catname} is snuggled up next to you.
+
+THE GOOD ENDING :D
+
+
+:: Doorway {"position":"1150,375","size":"100,100"}
+--
+Entering your home, you're greeted by your affectionate cat hoping to steal any body heat he can.
+
+You still remember the day you got the little guy. 
+You thought the name {text input for: 'catname'} suited him well.
+
+You scratch his chin as he vibrates lovingly
+
+[[You Lock the door behind you|Lock Door]]
+
+[[You take off your muddy shoes|Shoes]]
+
+
+:: End {"position":"1400,100","size":"100,100"}
+You suddenly die. oopsie
+
+
+:: Frigid {"position":"1500,475","size":"100,100"}
+You shiver as you climb into bed. You know you should make dinner but the day seems too much.
+
+You doubt you'll be able to sleep let alone survive the night without getting hypothermia
+
+[[Sigh, Turn on the lights and start the heater|Lights]]
+
+[[Refuse to spend any more energy and stay in bed|ColdBed]]
+
+
+:: Heatershake {"position":"1925,350","size":"100,100"}
+heatershaked: "true"
+--
+
+[if heatersmacked == "false"]
+Hmmm. Doesn't seem to have fixed it.
+
+You think long and hard about what else you can do to fix this.
+
+[[Smack the heater|Heatersmack]]
+[else]
+Unsurprisingly it has not help.
+
+The best you can do now is cook up a warm meal and layer up.
+
+[[Head to the kitchen|Kitchen]]
+
+
+:: Heatersmack {"position":"1800,475","size":"100,100"}
+heatersmacked: "true"
+--
+
+[if heatershaked == "false"]
+Hmmm. Doesn't seem to have fixed it.
+
+You think long and hard about what else you can do to fix this.
+
+[[Shake the heater|Heatershake]]
+[else]
+Unsurprisingly it has not help.
+
+The best you can do now is cook up a warm meal and layer up.
+
+[[Head to the kitchen|Kitchen]]
+
+
+:: InspectGas {"position":"1800,350","size":"100,100"}
+It looks as run down as it always has. Another casualty of a careless landlord.
+
+You don't know the first thing about appliance maintenance but you try your best to get it working again.
+
+[[Smack the heater|Heatersmack]]
+
+[[Shake the heater|Heatershake]]
+
+
+:: Kitchen {"position":"1925,475","size":"100,100"}
+Unsurpsisingly it does not help.
+
+The best you can do now is cook up a warm meal and layer up.
+
+[[Head to the kitchen|InspectGas]
+
+
+:: Lights {"position":"1650,350","size":"100,100"}
+The lights flick on breathing some life into the room but you notice the heater remains silent.
+
+You let out a sigh as the ever aging house gets on your nerves.
+
+[[Check on the heater|InspectGas]]
+
+
+:: Lock Door {"position":"1300,275","size":"100,100"}
+lockeddoor: "true"
+--
+You lock the door behind you. 
+
+Nobody is getting in or out. Not even {catname}
+
+[if shoesoff == "false"]
+[[You take off your muddy shoes|Shoes]]
+[else]
+[[You head to your bedroom|Bedroom]].
+
+
+:: Prologue {"position":"900,375","size":"200,100"}
+config.style.page.color: "gray-1 on black"
+config.style.page.link.active.color: "#ddf on #000"
+config.style.page.link.active.font: ""
+config.style.page.link.active.lineColor: "#ddf"
+config.style.page.link.color: "#4af"
+config.style.page.link.lineColor: "#4af"
+config.style.page.theme.enableSwitching: false
+lockeddoor: "false"
+shoesoff: "false"
+heatersmacked: "false"
+heatershaked: "false"
+--
+It has been a long day.
+
+The boss chewed you out at work for something that wasn't your fault.
+
+Someone dented your car and didn't leave a note.
+
+[[You just want to be home.|Doorway]]
+
+
+:: Shoes {"position":"1300,450","size":"100,100"}
+shoesoff: "true"
+--
+Good thing you did. The rain outside was churning up the mud and the last thing you need is more cleaning up to do.
+
+As you take off your shoes {catname} starts batting at your shoelaces.
+
+[if lockeddoor == "false"]
+[[You Lock the door behind you|Lock Door]]
+[else]
+[[You head to your bedroom|Bedroom]].
