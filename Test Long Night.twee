@@ -123,7 +123,7 @@ Unsurpsisingly it does not help.
 
 The best you can do now is cook up a warm meal and layer up.
 
-[[Head to the kitchen|InspectGas]
+[[Head to the kitchen|TacoTime]]
 
 
 :: Lights {"position":"1650,350","size":"100,100"}
@@ -180,3 +180,7 @@ As you take off your shoes {catname} starts batting at your shoelaces.
 [[You Lock the door behind you|Lock Door]]
 [else]
 [[You head to your bedroom|Bedroom]].
+
+
+:: TacoTime {"position":"1925,600","size":"100,100"}
+TACO TIME!
